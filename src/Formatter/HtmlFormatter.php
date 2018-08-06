@@ -24,7 +24,7 @@ class HtmlFormatter extends BaseFormatter
     {
         return sprintf("<%s class='%s'>%s</%s>",
                         $this->element,
-                        $level . implode(" ", $this->class),
+                        trim($level . " " . implode(" ", $this->class)),
                         parent::format($level, $message, $context),
                         $this->element);
     }

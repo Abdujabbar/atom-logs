@@ -23,9 +23,9 @@ class BaseFormatter implements IFormat
         $replacement = array();
         foreach($context as $key => $value) {
             if (!is_array($value) && (!is_object($value) || method_exists($value, '__toString'))) {
-                $replace['{' . $key . '}'] = $value;
+                $replacement['{' . $key . '}'] = $value;
             }
         }
-        return strstr($message, $replacement);
+        return strtr($message, $replacement);
     }
 }
