@@ -20,7 +20,7 @@ class HtmlFormatter extends BaseFormatter
         $this->class = $class;
     }
 
-    public function format($level = 'alert', $message = "", $context = array())
+    public function format(string $level = 'alert', string $message = "", array $context = array())
     {
         return sprintf("<%s class='%s'>%s</%s>",
                         $this->element,

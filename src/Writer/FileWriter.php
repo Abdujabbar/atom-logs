@@ -14,7 +14,12 @@ class FileWriter extends BaseWriter implements IWriter
 {
 
 
-    public function addRecord($level = 'alert', $message = "", $context = array())
+    /**
+     * @param string $level
+     * @param string $message
+     * @param array $context
+     */
+    public function addRecord(string $level = 'alert', string $message = "", array $context = array())
     {
         $record = sprintf("%s | %s\r\n",
                         date($this->timeFormat, time()),
@@ -23,7 +28,7 @@ class FileWriter extends BaseWriter implements IWriter
         file_put_contents($this->source, $record);
     }
 
-    public function getRecords($level = LogLevel::ALERT, $from = null, $to = null)
+    public function getRecords(string $level = LogLevel::ALERT, string $from = null, string $to = null)
     {
 
     }

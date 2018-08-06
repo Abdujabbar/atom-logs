@@ -20,14 +20,14 @@ class BaseWriter
      * @var $formatter IFormat
      */
     protected $formatter;
-    public function __construct($source, $formatter)
+    public function __construct($source, IFormat $formatter)
     {
         $this->source = $source;
         $this->formatter = $formatter;
     }
 
 
-    public function setTimeFormat($format = "d.m.Y H:i:s") {
+    public function setTimeFormat(string $format = "d.m.Y H:i:s") {
         $this->timeFormat = $format;
     }
 }

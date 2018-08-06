@@ -12,6 +12,6 @@ use Psr\Log\LogLevel;
 
 interface IWriter
 {
-    public function addRecord($level = 'alert', $message = "", $context = array());
-    public function getRecords($level = LogLevel::ALERT, $from = null, $to = null);
+    public function addRecord(string $level = 'alert', string $message = "", array $context = array());
+    public function getRecords(string $level = LogLevel::ALERT, string $from = null, string $to = null);
 }

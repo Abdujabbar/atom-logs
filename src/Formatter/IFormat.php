@@ -11,5 +11,5 @@ namespace Atom\Logs\Formatter;
 
 interface IFormat
 {
-    public function format($level = 'alert', $message = "", $context = array());
+    public function format(string $level = 'alert', string $message = "", array $context = array());
 }

@@ -20,13 +20,13 @@ class DatabaseWriter extends BaseWriter implements IWriter
     public $table;
 
 
-    public function addRecord($level = 'alert', $message = "", $context = array())
+    public function addRecord(string $level = 'alert', string $message = "", array $context = array())
     {
         // TODO: Implement addRecord() method.
 
     }
 
-    public function getRecords($level = LogLevel::ALERT, $from = null, $to = null)
+    public function getRecords(string $level = LogLevel::ALERT, string $from = null, string $to = null)
     {
         // TODO: Implement getRecords() method.
     }

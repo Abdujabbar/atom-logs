@@ -12,7 +12,13 @@ namespace Atom\Logs\Formatter;
 class BaseFormatter implements IFormat
 {
 
-    public function format($level = 'alert', $message = "", $context = array())
+    /**
+     * @param string $level
+     * @param string $message
+     * @param array $context
+     * @return string
+     */
+    public function format(string $level = 'alert', string $message = "", array $context = array())
     {
         $replacement = array();
         foreach($context as $key => $value) {
