@@ -8,8 +8,6 @@
 
 namespace Atom\Logs\Writer;
 
-
-
 use Atom\Logs\Formatter\IFormat;
 
 class BaseWriter
@@ -20,6 +18,8 @@ class BaseWriter
      * @var $formatter IFormat
      */
     protected $formatter;
+
+
     public function __construct($source, IFormat $formatter)
     {
         $this->source = $source;
@@ -27,7 +27,8 @@ class BaseWriter
     }
 
 
-    public function setTimeFormat(string $format = "d.m.Y H:i:s") {
+    public function setTimeFormat(string $format = "d.m.Y H:i:s")
+    {
         $this->timeFormat = $format;
     }
 }

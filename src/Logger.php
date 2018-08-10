@@ -25,8 +25,9 @@ class Logger implements LoggerInterface
      */
     public function __construct($writer)
     {
-        if(!($writer instanceof IWriter))
+        if (!($writer instanceof IWriter)) {
             throw new \Exception("Writer must be instance of IWriter");
+        }
 
         $this->writer = $writer;
     }

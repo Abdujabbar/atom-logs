@@ -21,15 +21,16 @@ class FileWriter extends BaseWriter implements IWriter
      */
     public function addRecord(string $level = 'alert', string $message = "", array $context = array())
     {
-        $record = sprintf("%s | %s\r\n",
+        $record = sprintf(
+            "%s | %s\r\n",
                         date($this->timeFormat, time()),
-                        $this->formatter->format($level, $message, $context));
+                        $this->formatter->format($level, $message, $context)
+        );
 
         file_put_contents($this->source, $record);
     }
 
     public function getRecords(string $level = LogLevel::ALERT, string $from = null, string $to = null)
     {
-
     }
 }

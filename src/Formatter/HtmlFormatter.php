@@ -8,7 +8,6 @@
 
 namespace Atom\Logs\Formatter;
 
-
 class HtmlFormatter extends BaseFormatter
 {
     protected $element = "div";
@@ -22,10 +21,12 @@ class HtmlFormatter extends BaseFormatter
 
     public function format(string $level = 'alert', string $message = "", array $context = array())
     {
-        return sprintf("<%s class='%s'>%s</%s>",
+        return sprintf(
+            "<%s class='%s'>%s</%s>",
                         $this->element,
                         trim($level . " " . implode(" ", $this->class)),
                         parent::format($level, $message, $context),
-                        $this->element);
+                        $this->element
+        );
     }
 }
